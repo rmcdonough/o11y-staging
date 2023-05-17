@@ -2225,8 +2225,10 @@
 
 <h1 id="best-practices-for-hybrid-and-multicloud">Best practices for hybrid and multicloud<a class="headerlink" href="#best-practices-for-hybrid-and-multicloud" title="Permanent link">&para;</a></h1>
 <h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
-<p>We consider multicloud to be the concurrent use of more than one cloud services provider to operate your own workloads, and hybrid is the extending of your workloads across both on-premises and cloud environments. Observability across hybrid and multicloud environments may add significant complexity due to tool diversity, latency, and heterogenous workloads. Regardless, this remains a common goal for both development and business users. A rich ecosystem of products and services address this. However, the usefulness of many tools for specific cloud-native workloads can vary dramatically. Consider the different requirements of monitoring a batch processing workload, compared to a real-time banking application: both have logs, metrics, and traces; however, the toolchain for observing them will vary, with a number of cloud-native, open source, and ISV products available. Add to this the complexity of multicloud and hybrid, and gaining insights from your applications becomes considerably harder.</p>
-<p>These added dimensions can drive people to invest in a single toolchain that presents a unified interface, with the goal of cutting-through the challenges of distributed environments. After all, reducing the signal-to-noise ratio is usually a good thing! However, a single approach does not work for all use cases, and the operating models of various platforms may add confusion. Our goal is to help you make informed decisions that compliment your needs and reduce your mean time to remediation when issues do occur. Below are the best practices that we have learned through working with customers of all sizes, and across every industry.</p>
+<p>We consider multicloud to be the concurrent use of more than one cloud services provider to operate your own workloads, and hybrid is the extending of your workloads across both on-premises and cloud environments. Observability across hybrid and multicloud environments may add significant complexity due to tool diversity, latency, and heterogenous workloads. Regardless, this remains a common goal for both development and business users. A rich ecosystem of products and services address this.</p>
+<p>However, the usefulness of observability tools for cloud-native workloads can vary dramatically. Consider the different requirements of monitoring a containerized batch processing workload, compared to a real-time banking application using a serverless framework: both have logs, metrics, and traces; however, the toolchain for observing them will vary, with a number of cloud-native, open source, and ISV products available. An open-source tool such as Prometheus may be an excellent fit for one, whereas a cloud-native tool provided as a managed service could better meet your requirements.</p>
+<p>Add to this the complexity of multicloud and hybrid, and gaining insights from your applications becomes considerably harder.</p>
+<p>In order to deal with these added dimensions and facilitate approaches to observability, customers tend to invest in a single toolchain with a unified interface. After all, reducing the signal-to-noise ratio is usually a good thing! However, a single approach does not work for all use cases, and the operating models of various platforms may add confusion. Our goal is to help you make informed decisions that compliment your needs and reduce your mean time to remediation when issues do occur. Below are the best practices that we have learned through working with customers of all sizes, and across every industry.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>These best practices are intended for a broad set of roles: enterprise architects, developers, DevOps, and more. We suggest evaluating them through the lens of your organization’s business needs, and how observability in distributed environments can provide as much value as possible.</p>
@@ -2288,7 +2290,7 @@
 <p>OTel captures logs, metrics, and traces using a concept of a span. Spans contain these signals grouped together from a single transaction, packaging them into a contextualized, searchable object. This means you can view your signals from a single application event in one simple entity. For example, a user logging into a web site, and the requests this creates to all the downstream services this integrates with, can be presented as a single span.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>OTel is not limited to application traces, and is widely used for logs and metrics. And many ISV products accept OTLP directly today.</p>
+<p>OTel is not limited to application traces, and is widely used for logs and metrics. And many <a href="https://opentelemetry.io/ecosystem/vendors/">ISV products accept OTLP directly today</a>.</p>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
@@ -2296,7 +2298,7 @@
 </div>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>OTEL is future-proofing, scalable, and makes it easier to change your collection and analysis systems in the future without having to change application code, making it an efficient <a href="https://www.youtube.com/watch?v=99r7cxKW8Rg">shift to the left</a>.</p>
+<p>OTel is future-proofing, scalable, and makes it easier to change your collection and analysis systems in the future without having to change application code, making it an efficient <a href="https://www.youtube.com/watch?v=99r7cxKW8Rg">shift to the left</a>.</p>
 </div>
 
 
@@ -2319,7 +2321,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; Amazon 2022
+      Copyright &copy; Amazon 2023
     </div>
   
   
