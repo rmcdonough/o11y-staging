@@ -1,3 +1,0 @@
-# Tracing with ADOT
-
-todo
